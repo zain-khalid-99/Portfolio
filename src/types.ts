@@ -18,6 +18,7 @@ export interface Project {
   mainCategory: 'WordPress' | 'Shopify' | 'Performance Marketing';
   image: string;
   description: string;
+  link?: string;
   fullDescription?: string;
   challenge?: string;
   solution?: string;

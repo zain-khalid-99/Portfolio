@@ -44,7 +44,7 @@ export const Navbar = () => {
         { name: 'Performance Marketing', href: '/services/marketing' },
       ]
     },
-    { name: 'Case Studies', href: '/case-studies' },
+    { name: 'FAQ', href: '/faq' },
     { name: 'Portfolio', href: '/portfolio' },
     { name: 'Contact', href: '/contact' },
   ];
@@ -52,7 +52,8 @@ export const Navbar = () => {
   return (
     <nav
       className={cn(
-        'fixed top-0 left-0 right-0 z-[100] transition-all duration-500 flex items-center',
+        'fixed top-0 left-0 right-0 transition-all duration-500 flex items-center',
+        isMobileMenuOpen ? 'z-[1000]' : 'z-[100]',
         isScrolled ? 'h-20 bg-white/95 backdrop-blur-md border-b border-border-interface' : 'h-24 bg-transparent'
       )}
     >

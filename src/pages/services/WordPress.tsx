@@ -33,7 +33,7 @@ export const WordPress = () => {
                 <span className="text-brand">WEB DEVELOPMENT.</span>
               </h1>
               <p className="text-lg text-text-muted font-medium mb-12 max-w-xl">
-                I design and develop high-performance WordPress websites that are built with one goal — to help your business grow. Every website is fast, scalable, and optimized for conversions.
+                I design and develop high-performance WordPress websites built with one goal — to help your business grow. Every website is fast, scalable, and optimized to convert visitors into customers.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button asChild className="w-full sm:w-auto px-12 h-16 uppercase gap-2 text-[12px] font-bold tracking-widest">
@@ -74,9 +74,17 @@ export const WordPress = () => {
         <div className="container-custom">
           <div className="max-w-[700px] mx-auto text-center">
             <h2 className="mb-8 uppercase">THE PROBLEM</h2>
-            <p className="text-xl text-text-muted font-medium leading-relaxed">
-              Most WordPress websites look good but don’t convert. They load slowly, hurt SEO, and are built with bloated themes that are hard to manage and even harder to scale. This results in lost traffic, poor user experience, and missed business opportunities.
-            </p>
+            <div className="text-xl text-text-muted font-medium leading-relaxed text-left">
+              <p className="mb-4 text-center">Most WordPress websites don’t perform — they just exist.</p>
+              <p className="mb-4">Many websites look good but fail where it matters. They:</p>
+              <ul className="list-disc pl-6 mb-4 space-y-2">
+                <li>Load slowly and increase bounce rates</li>
+                <li>Are built without a clear conversion strategy</li>
+                <li>Lack scalability and structured architecture</li>
+                <li>Don’t support SEO or marketing efforts</li>
+              </ul>
+              <p>This leads to lost traffic, poor user experience, and missed business opportunities.</p>
+            </div>
           </div>
         </div>
       </section>
@@ -87,9 +95,17 @@ export const WordPress = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
             <div>
               <h2 className="mb-8 uppercase">THE SOLUTION</h2>
-              <p className="text-lg text-text-muted font-medium leading-relaxed">
-                I build custom WordPress websites that combine clean, modern design with industrial-grade performance. Every element is strategically designed to guide users toward action while maintaining lightning-fast speeds.
-              </p>
+              <div className="text-lg text-text-muted font-medium leading-relaxed space-y-4">
+                <p className="font-bold text-text-main">A system built for performance, not just design</p>
+                <p>I build WordPress websites using a strategy-first approach, combining clean design, performance engineering, and conversion-focused structure.</p>
+                <p>Every project is crafted to:</p>
+                <ul className="list-disc pl-6 space-y-2">
+                  <li>Reflect a strong, modern brand identity</li>
+                  <li>Guide users toward clear actions</li>
+                  <li>Maintain high-speed performance</li>
+                  <li>Support SEO and long-term growth</li>
+                </ul>
+              </div>
             </div>
             <div className="grid grid-cols-1 gap-6">
               {[
@@ -147,16 +163,18 @@ export const WordPress = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
              <div>
               <h2 className="mb-8 uppercase">BUSINESS RESULTS</h2>
-              <p className="text-lg text-text-muted font-medium max-w-xl">
-                My work is measured by the growth it brings to your business. I focus on outcomes that matter: revenue, visibility, and trust.
-              </p>
+              <div className="text-lg text-text-muted font-medium max-w-xl space-y-4">
+                <p className="font-bold text-text-main">Built to drive measurable growth</p>
+                <p>My work focuses on real business impact — not just visuals.</p>
+                <p className="font-bold text-text-main mt-8">Your website becomes a revenue-generating asset, not just an online presence.</p>
+              </div>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {[
-                { title: 'Increased Conversion', val: '+45%' },
-                { title: 'Faster Load Times', val: '0.8s' },
-                { title: 'Better Engagement', val: '2.5x' },
-                { title: 'Mobile Traffic', val: '100%' }
+                { title: 'Increase in Conversions', val: '+45%' },
+                { title: 'Faster Load Time', val: '2.5s' },
+                { title: 'Better Engagement', val: '2.5X' },
+                { title: 'Traffic & Visibility', val: 'Higher' }
               ].map((stat, idx) => (
                 <div key={idx} className="p-10 bg-surface border border-border-interface rounded-[6px] text-center">
                   <span className="text-4xl font-display font-bold text-brand block mb-2">{stat.val}</span>

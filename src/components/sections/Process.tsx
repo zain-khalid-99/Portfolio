@@ -2,10 +2,10 @@ import { motion } from 'motion/react';
 import { Search, Lightbulb, Code2, LineChart } from 'lucide-react';
 
 const PROCESS_STEPS = [
-  { number: '01', title: 'Discovery', desc: 'Understanding your business goals, audience, and challenges.', icon: Search },
+  { number: '01', title: 'Discovery', desc: 'Understanding your business, audience, and challenges.', icon: Search },
   { number: '02', title: 'Strategy', desc: 'Planning structure, user flow, and conversion paths.', icon: Lightbulb },
-  { number: '03', title: 'Execution', desc: 'Designing and developing with precision and performance.', icon: Code2 },
-  { number: '04', title: 'Optimization', desc: 'Improving based on real data and user behavior.', icon: LineChart }
+  { number: '03', title: 'Execution', desc: 'Designing and developing a high-performance website.', icon: Code2 },
+  { number: '04', title: 'Optimization', desc: 'Improving based on data, behavior, and performance metrics.', icon: LineChart }
 ];
 
 export const Process = () => {

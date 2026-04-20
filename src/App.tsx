@@ -13,6 +13,7 @@ import { Portfolio } from './pages/Portfolio';
 import { ProjectDetail } from './pages/ProjectDetail';
 import { Contact } from './pages/Contact';
 import { FreeAudit } from './pages/FreeAudit';
+import { FAQPage } from './pages/FAQPage';
 import { WordPress } from './pages/services/WordPress';
 import { Shopify } from './pages/services/Shopify';
 import { PerformanceMarketing } from './pages/services/PerformanceMarketing';
@@ -55,7 +56,8 @@ export default function App() {
             <Route path="marketing" element={<PerformanceMarketing />} />
           </Route>
 
-          <Route path="case-studies" element={<CaseStudies />} />
+          {/* <Route path="case-studies" element={<CaseStudies />} /> */}
+          <Route path="faq" element={<FAQPage />} />
 
           <Route path="portfolio">
             <Route index element={<Portfolio />} />

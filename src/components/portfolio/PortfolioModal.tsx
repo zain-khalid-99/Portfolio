@@ -108,10 +108,10 @@ export const PortfolioModal = ({ project, onClose }: PortfolioModalProps) => {
 
                     <div className="pt-10 border-t border-border-interface space-y-4">
                        <Button fullWidth asChild className="h-16 uppercase">
-                          <Link to="/contact" onClick={onClose}>Book a Call</Link>
+                          <a href={project.link || "#"} target="_blank" rel="noopener noreferrer">View Live Website</a>
                        </Button>
                        <Button fullWidth variant="secondary" asChild className="h-16 uppercase">
-                          <Link to="/free-audit" onClick={onClose}>Scale Your Brand</Link>
+                          <Link to="/contact" onClick={onClose}>Book a Call</Link>
                        </Button>
                     </div>
                   </div>
