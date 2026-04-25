@@ -5,7 +5,7 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X, ChevronDown, ArrowRight } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from './ui/Button';
 import { cn } from '@/lib/utils';
@@ -100,8 +100,12 @@ export const Navbar = () => {
           </ul>
 
           <div className="flex items-center gap-6 pl-8 border-l border-border-interface h-6">
-            <Button asChild>
-              <Link to="/free-audit">Get Free Audit</Link>
+            <Button asChild className="group relative overflow-hidden">
+              <Link to="/free-audit" className="flex items-center gap-2">
+                Get Free Audit
+                <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out" />
+              </Link>
             </Button>
           </div>
         </div>

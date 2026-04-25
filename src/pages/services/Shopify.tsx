@@ -1,9 +1,9 @@
 import { motion } from 'motion/react';
 import { Button } from '../../components/ui/Button';
-import { 
-  ShoppingCart, 
-  Zap, 
-  Smartphone, 
+import {
+  ShoppingCart,
+  Zap,
+  Smartphone,
   Calendar,
   Search,
   CheckCircle2,
@@ -30,7 +30,7 @@ export const Shopify = () => {
             >
               <span className="text-[12px] font-bold text-brand uppercase tracking-[0.4em] mb-6 block">Service // E-commerce</span>
               <h1 className="mb-8 uppercase leading-[1.1]">
-                SHOPIFY <br /> 
+                SHOPIFY <br />
                 <span className="text-brand">STORE DESIGN.</span>
               </h1>
               <p className="text-lg text-text-muted font-medium mb-12 max-w-xl">
@@ -46,20 +46,20 @@ export const Shopify = () => {
                 <Button variant="secondary" asChild className="w-full sm:w-auto px-12 h-16 uppercase gap-2 text-[12px] font-bold tracking-widest">
                   <Link to="/free-audit" className="flex items-center gap-2">
                     <Search size={18} />
-                    Free Website Audit
+                    Get Free Audit
                   </Link>
                 </Button>
               </div>
             </motion.div>
-            
-            <motion.div 
+
+            <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               className="relative aspect-square lg:aspect-video rounded-[6px] overflow-hidden border border-border-interface shadow-premium-md bg-surface"
             >
-              <img 
-                src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=1000&auto=format&fit=crop" 
+              <img
+                src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=1000&auto=format&fit=crop"
                 alt="Shopify Store Design"
                 className="w-full h-full object-cover grayscale opacity-80"
                 referrerPolicy="no-referrer"
@@ -146,7 +146,7 @@ export const Shopify = () => {
       <section className="section-spacing bg-white">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-             <div>
+            <div>
               <h2 className="mb-8 uppercase">BUSINESS RESULTS</h2>
               <p className="text-lg text-text-muted font-medium max-w-xl">
                 eCommerce success is measured by revenue. My stores are engineered to maximize your ROI through better metrics across the board.

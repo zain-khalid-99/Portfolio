@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
 import { Hero } from '../components/sections/Hero';
+import { Marquee } from '../components/sections/Marquee';
 import { Services } from '../components/sections/Services';
 import { PortfolioGrid } from '../components/sections/PortfolioGrid';
 import { Process } from '../components/sections/Process';
@@ -10,6 +11,7 @@ export const Home = () => {
   return (
     <main>
       <Hero />
+      <Marquee />
       
       {/* About Section - Brief Intro */}
       <section id="about" className="section-spacing bg-white">

@@ -1,28 +1,29 @@
-@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Syne:wght@400..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.cdnfonts.com/css/aeonik');
 @import "tailwindcss";
 
 @theme {
   --font-sans: "Jost", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Syne", sans-serif;
+  --font-display: "Aeonik", sans-serif;
   
   /* Colors */
-  --color-brand: #6754e9;
-  --color-brand-dark: #4c3ccf;
-  --color-brand-light: #8b7cf6;
+  --color-brand: #000000;
+  --color-brand-dark: #000000;
+  --color-brand-light: #333333;
   
-  --color-accent: #00d4ff;
-  --color-accent-soft: #e6fbff;
+  --color-accent: #000000;
+  --color-accent-soft: #f4f4f5;
   
   --color-background: #ffffff;
-  --color-surface: #f6f7fb;
-  --color-surface-dark: #eef0f5;
+  --color-surface: #f4f4f5;
+  --color-surface-dark: #e4e4e7;
   
-  --color-text-main: #0a0a0a;
-  --color-text-muted: #6b7280;
-  --color-text-light: #9ca3af;
+  --color-text-main: #000000;
+  --color-text-muted: #52525b;
+  --color-text-light: #a1a1aa;
   
   --color-border-interface: #e5e7eb;
-  --color-border-soft: #f1f3f7;
+  --color-border-soft: #f4f4f5;
   
   /* Radii */
   --radius-button: 3px;
@@ -40,12 +41,17 @@
 
   body {
     @apply bg-background text-text-main tracking-normal font-sans antialiased;
+    background-image: 
+      linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+    background-attachment: fixed;
     /* Body Typography */
     @apply text-[16px] leading-[24px] lg:text-[18px] lg:leading-[28px];
   }
 
   h1, h2, h3, h4 {
-    @apply font-display font-bold tracking-tight text-text-main uppercase;
+    @apply font-display font-medium tracking-tight text-text-main uppercase;
   }
 
   h1 {
@@ -53,11 +59,11 @@
   }
 
   h2 {
-    @apply text-[26px] leading-[34px] lg:text-[44px] lg:leading-[52px] font-semibold;
+    @apply text-[26px] leading-[34px] lg:text-[44px] lg:leading-[52px] font-medium;
   }
 
   h3 {
-    @apply text-[22px] leading-[30px] lg:text-[32px] lg:leading-[40px] font-semibold;
+    @apply text-[22px] leading-[30px] lg:text-[32px] lg:leading-[40px] font-medium;
   }
 
   h4 {
