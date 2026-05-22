@@ -42,6 +42,7 @@ export const Navbar = () => {
         { name: 'WordPress Development', href: '/services/wordpress' },
         { name: 'Shopify Design', href: '/services/shopify' },
         { name: 'Performance Marketing', href: '/services/marketing' },
+        { name: 'Social Media Marketing', href: '/services/social-media' },
       ]
     },
     { name: 'FAQ', href: '/faq' },

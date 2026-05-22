@@ -94,6 +94,7 @@ export const Footer = () => {
                 { name: 'About', href: '/about' },
                 { name: 'Services', href: '/services' },
                 { name: 'Portfolio', href: '/portfolio' },
+                { name: 'Social Media', href: '/services/social-media' },
                 { name: 'Contact', href: '/contact' },
                 { name: 'Free Audit', href: '/free-audit' }
               ].map(link => (
@@ -105,11 +106,19 @@ export const Footer = () => {
           </div>
         </div>
 
-        <div className="pt-12 border-t border-border-interface flex flex-col md:flex-row justify-between items-center gap-6">
-          <p className="text-[10px] font-bold text-text-light uppercase tracking-[4px]">© {new Date().getFullYear()} MUHAMMAD ZAIN. ALL RIGHTS RESERVED.</p>
-          <div className="flex gap-8">
-            <Link to="/legal/privacy" className="text-[10px] uppercase font-bold tracking-widest text-text-light hover:text-brand transition-colors">Privacy Policy</Link>
-            <Link to="/legal/terms" className="text-[10px] uppercase font-bold tracking-widest text-text-light hover:text-brand transition-colors">Terms of Service</Link>
+        <div className="pt-12 border-t border-border-interface flex flex-col items-center gap-6">
+          <h3 className="text-2xl md:text-3xl font-display font-bold uppercase tracking-[0.2em] text-text-main">
+            Muhammad Zain
+          </h3>
+          <p className="text-sm text-text-muted font-medium text-center max-w-2xl mx-auto">
+            Helping Brands Scale Through Web Development, Paid Ads & Social Media Marketing
+          </p>
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4 w-full mt-6">
+            <p className="text-[10px] font-bold text-text-light uppercase tracking-[4px]">© {new Date().getFullYear()} MUHAMMAD ZAIN. ALL RIGHTS RESERVED.</p>
+            <div className="flex gap-8">
+              <Link to="/legal/privacy" className="text-[10px] uppercase font-bold tracking-widest text-text-light hover:text-brand transition-colors">Privacy Policy</Link>
+              <Link to="/legal/terms" className="text-[10px] uppercase font-bold tracking-widest text-text-light hover:text-brand transition-colors">Terms of Service</Link>
+            </div>
           </div>
         </div>
       </div>

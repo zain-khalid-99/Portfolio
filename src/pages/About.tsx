@@ -32,7 +32,7 @@ export const About = () => {
               MUHAMMAD ZAIN
             </h1>
             <p className="text-xl md:text-2xl text-text-muted font-medium max-w-2xl leading-relaxed">
-              WordPress Developer | Shopify Designer | Performance Marketing Specialist
+              Helping Brands Scale Through Web Development, Paid Ads & Social Media Marketing
             </p>
           </motion.div>
         </div>

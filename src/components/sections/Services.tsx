@@ -4,7 +4,7 @@
  */
 
 import { motion } from 'motion/react';
-import { Layout, ShoppingBag, BarChart3, MousePointer2 } from 'lucide-react';
+import { Layout, ShoppingBag, BarChart3, MousePointer2, Share2 } from 'lucide-react';
 import { SectionHeader } from '../ui/SectionHeader';
 import { SERVICES } from '@/constants';
 
@@ -15,6 +15,7 @@ const ICON_MAP = {
   ShoppingBag: ShoppingBag,
   BarChart3: BarChart3,
   MousePointer2: MousePointer2,
+  Share2: Share2,
 };
 
 export const Services = () => {
@@ -28,18 +29,19 @@ export const Services = () => {
           </h2>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-t border-l border-border-interface">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border-t border-l border-border-interface">
           {[
             { id: 'wordpress', title: 'WordPress Web Development', description: 'Fast, scalable, and SEO-friendly websites built for growth.', icon: 'Layout' },
             { id: 'shopify', title: 'Shopify Store development', description: 'Conversion-optimized e-commerce stores designed to sell.', icon: 'ShoppingBag' },
             { id: 'marketing', title: 'Performance Marketing', description: 'Data-driven campaigns that maximize lead generation.', icon: 'BarChart3' },
+            { id: 'social-media', title: 'Social Media Marketing', description: 'Engaging content strategies that build brand loyalty and community.', icon: 'Share2' },
           ].map((service, idx) => {
             const IconComponent = ICON_MAP[service.icon as keyof typeof ICON_MAP];
             return (
               <Link
                 key={service.id}
                 to={`/services/${service.id}`}
-                className="group relative p-8 lg:p-12 border-b border-r border-border-interface hover:bg-surface transition-all duration-500 overflow-hidden min-h-[350px] lg:min-h-[400px] flex flex-col pt-16 lg:pt-24"
+                className="group relative p-8 lg:p-10 border-b border-r border-border-interface hover:bg-surface transition-all duration-500 overflow-hidden min-h-[350px] lg:min-h-[380px] flex flex-col pt-16 lg:pt-20"
               >
                 <div className="relative z-10">
                   <div className="w-12 h-12 flex items-center justify-center mb-8 border border-border-interface text-text-main group-hover:bg-brand group-hover:text-white group-hover:border-brand transition-all rounded-[3px]">

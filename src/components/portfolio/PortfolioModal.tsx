@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from 'motion/react';
-import { X, Calendar, Target, Zap, TrendingUp, ArrowRight } from 'lucide-react';
+import { X, Calendar, Target, Zap, TrendingUp, ArrowRight, Download, FileSpreadsheet, FileImage, FileText, File } from 'lucide-react';
 import { Project } from '../../types';
 import { Button } from '../ui/Button';
 import { Link } from 'react-router-dom';
@@ -50,25 +50,13 @@ export const PortfolioModal = ({ project, onClose }: PortfolioModalProps) => {
             </button>
 
             <div className="flex flex-col">
-              {/* Header Image */}
-              <div className="aspect-video w-full overflow-hidden bg-surface relative border-b border-border-interface">
-                <img 
-                  src={project.image} 
-                  alt={project.title} 
-                  className="w-full h-full object-cover grayscale opacity-90 transition-all duration-700 hover:grayscale-0 hover:opacity-100"
-                  referrerPolicy="no-referrer"
-                />
-                <div className="absolute bottom-10 left-10 z-10">
-                   <span className="px-4 py-2 bg-brand text-white text-[10px] font-bold uppercase tracking-[0.3em] rounded-[3px] shadow-lg mb-4 inline-block">
-                    {project.category}
-                   </span>
-                </div>
-              </div>
-
               {/* Content Grid */}
               <div className="p-8 md:p-14 lg:p-20">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 mb-20">
                   <div className="lg:col-span-8">
+                    <span className="px-4 py-2 bg-brand text-white text-[10px] font-bold uppercase tracking-[0.3em] rounded-[3px] shadow-lg mb-8 inline-block">
+                     {project.category}
+                    </span>
                     <h2 className="text-4xl md:text-5xl font-display font-bold uppercase tracking-tight mb-8 leading-tight">
                       {project.title}
                     </h2>
@@ -108,7 +96,9 @@ export const PortfolioModal = ({ project, onClose }: PortfolioModalProps) => {
 
                     <div className="pt-10 border-t border-border-interface space-y-4">
                        <Button fullWidth asChild className="h-16 uppercase">
-                          <a href={project.link || "#"} target="_blank" rel="noopener noreferrer">View Live Website</a>
+                          <a href={project.fileUrl || project.link || "#"} target="_blank" rel="noopener noreferrer">
+                            {project.fileUrl ? (project.fileType === 'excel' ? 'Download Report' : 'View Document') : 'View Live Website'}
+                          </a>
                        </Button>
                        <Button fullWidth variant="secondary" asChild className="h-16 uppercase">
                           <Link to="/contact" onClick={onClose}>Book a Call</Link>
@@ -117,16 +107,53 @@ export const PortfolioModal = ({ project, onClose }: PortfolioModalProps) => {
                   </div>
                 </div>
 
-                {/* Gallery Preview if any */}
-                {project.gallery && project.gallery.length > 0 && (
-                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-20 border-t border-border-interface pt-20">
-                      {project.gallery.map((img, i) => (
-                        <div key={i} className="aspect-[4/3] rounded-[6px] overflow-hidden border border-border-interface">
-                          <img src={img} alt="Gallery" className="w-full h-full object-cover grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-700" referrerPolicy="no-referrer" />
-                        </div>
-                      ))}
-                   </div>
-                )}
+                 {/* Gallery Preview if any */}
+                 {project.gallery && project.gallery.length > 0 && (
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-20 border-t border-border-interface pt-20">
+                       {project.gallery.map((img, i) => (
+                         <div key={i} className="aspect-[4/3] rounded-[6px] overflow-hidden border border-border-interface">
+                           <img src={img} alt="Gallery" className="w-full h-full object-cover grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-700" referrerPolicy="no-referrer" />
+                         </div>
+                       ))}
+                    </div>
+                 )}
+
+                 {/* Document Preview if any */}
+                 {project.fileUrl && (
+                    <div className="mt-20 border-t border-border-interface pt-20">
+                      <h3 className="text-2xl font-display font-bold uppercase mb-8">
+                         {project.fileType === 'excel' ? 'Project Data Report' : project.fileType === 'image' ? 'Project Visuals' : 'Project Document'}
+                      </h3>
+                      
+                      {project.fileType === 'pdf' && (
+                         <iframe src={project.fileUrl} className="w-full h-[800px] rounded-[6px] border border-border-interface bg-surface shadow-premium-sm" title={project.title} />
+                      )}
+                      
+                      {project.fileType === 'image' && (
+                         <div className="rounded-[6px] overflow-hidden border border-border-interface bg-surface shadow-premium-sm flex justify-center p-4">
+                           <img src={project.fileUrl} alt={project.title} className="max-w-full h-auto object-contain rounded-[3px]" />
+                         </div>
+                      )}
+                      
+                      {(project.fileType === 'excel' || (!['pdf', 'image'].includes(project.fileType || ''))) && (
+                         <div className="py-20 px-8 border border-border-interface rounded-[6px] bg-surface flex flex-col items-center justify-center text-center shadow-premium-sm">
+                            <div className="w-24 h-24 bg-white border border-border-interface rounded-full flex items-center justify-center mb-8 shadow-premium-sm text-brand">
+                               {project.fileType === 'excel' ? <FileSpreadsheet size={40} /> : <File size={40} />}
+                            </div>
+                            <h4 className="text-2xl font-display font-bold uppercase mb-4">Downloadable Resource</h4>
+                            <p className="text-text-muted font-medium mb-10 max-w-lg text-lg">
+                              This project includes an attached {project.fileType === 'excel' ? 'spreadsheet report' : 'file'}. Click below to safely download and view the complete details on your device.
+                            </p>
+                            <Button asChild className="h-16 px-12 uppercase gap-3 text-[13px]">
+                               <a href={project.fileUrl} target="_blank" rel="noopener noreferrer" download>
+                                  <Download size={18} />
+                                  Download {project.fileType === 'excel' ? 'Excel Report' : 'File'}
+                               </a>
+                            </Button>
+                         </div>
+                      )}
+                    </div>
+                 )}
               </div>
             </div>
           </motion.div>

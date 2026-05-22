@@ -8,7 +8,6 @@ import { Layout } from './components/Layout';
 import { Home } from './pages/Home';
 import { About } from './pages/About';
 import { Services } from './pages/Services';
-import { CaseStudies } from './pages/CaseStudies';
 import { Portfolio } from './pages/Portfolio';
 import { ProjectDetail } from './pages/ProjectDetail';
 import { Contact } from './pages/Contact';
@@ -17,6 +16,7 @@ import { FAQPage } from './pages/FAQPage';
 import { WordPress } from './pages/services/WordPress';
 import { Shopify } from './pages/services/Shopify';
 import { PerformanceMarketing } from './pages/services/PerformanceMarketing';
+import { SocialMediaMarketing } from './pages/services/SocialMediaMarketing';
 import { PrivacyPolicy } from './pages/PrivacyPolicy';
 import { TermsConditions } from './pages/TermsConditions';
 import React, { useEffect } from 'react';
@@ -54,9 +54,9 @@ export default function App() {
             <Route path="wordpress" element={<WordPress />} />
             <Route path="shopify" element={<Shopify />} />
             <Route path="marketing" element={<PerformanceMarketing />} />
+            <Route path="social-media" element={<SocialMediaMarketing />} />
           </Route>
 
-          {/* <Route path="case-studies" element={<CaseStudies />} /> */}
           <Route path="faq" element={<FAQPage />} />
 
           <Route path="portfolio">

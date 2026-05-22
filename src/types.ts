@@ -15,7 +15,8 @@ export interface Project {
   slug: string;
   title: string;
   category: string;
-  mainCategory: 'WordPress' | 'Shopify' | 'Performance Marketing';
+  mainCategory: 'WordPress' | 'Shopify' | 'Performance Marketing' | 'Social Media';
+  tags?: string[];
   image: string;
   description: string;
   link?: string;
@@ -29,6 +30,8 @@ export interface Project {
   gallery?: string[];
   client?: string;
   year?: string;
+  fileUrl?: string;
+  fileType?: 'pdf' | 'excel' | 'image';
 }
 
 export interface CaseStudy extends Project {

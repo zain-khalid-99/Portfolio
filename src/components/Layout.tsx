@@ -3,6 +3,7 @@ import { motion, useScroll, useSpring } from 'motion/react';
 import { Navbar } from './Navbar';
 import { Footer } from './Footer';
 import { CustomCursor } from './ui/CustomCursor';
+import { WhatsAppWidget } from './ui/WhatsAppWidget';
 
 export const Layout = () => {
   const { scrollYProgress } = useScroll();
@@ -28,6 +29,7 @@ export const Layout = () => {
       </main>
 
       <Footer />
+      <WhatsAppWidget />
     </div>
   );
 };
