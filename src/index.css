@@ -1,92 +1,186 @@
-@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Barlow+Condensed:ital,wght@0,500;0,600;0,700;1,600&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,700&display=swap');
 @import url('https://fonts.cdnfonts.com/css/aeonik');
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Jost", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Aeonik", sans-serif;
+  --font-sans: "Quicksand", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-display: "Quicksand", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-serif: "Quicksand", sans-serif;
   
-  /* Colors */
-  --color-brand: #000000;
-  --color-brand-dark: #000000;
-  --color-brand-light: #333333;
+  /* Dark Theme Color Scheme */
+  --color-background: #0a0a0a;
+  --color-surface: #141414;
+  --color-surface-card: #181818;
+  --color-surface-dark: #1f1f1f;
   
-  --color-accent: #000000;
-  --color-accent-soft: #f4f4f5;
+  /* Primary Accent: Vibrant Orange-Red Gradient Range */
+  --color-brand: #FF4500;
+  --color-brand-start: #FF4500;
+  --color-brand-end: #FF7A3D;
+  --color-brand-dark: #E03E00;
+  --color-brand-light: #FF7A3D;
   
-  --color-background: #ffffff;
-  --color-surface: #f4f4f5;
-  --color-surface-dark: #e4e4e7;
+  --color-primary: #FF4500;
+  --color-secondary: #B0B0B0;
+  --color-tertiary: #181818;
+  --color-white: #FFFFFF;
   
-  --color-text-main: #000000;
-  --color-text-muted: #52525b;
-  --color-text-light: #a1a1aa;
+  --color-accent: #FF4500;
+  --color-accent-soft: rgba(255, 69, 0, 0.15);
   
-  --color-border-interface: #e5e7eb;
-  --color-border-soft: #f4f4f5;
+  /* Text */
+  --color-text-main: #FFFFFF;
+  --color-text-muted: #B0B0B0;
+  --color-text-light: #8E8E93;
+  
+  /* Borders */
+  --color-border-interface: rgba(255, 255, 255, 0.15);
+  --color-border-soft: rgba(255, 255, 255, 0.10);
   
   /* Radii */
-  --radius-button: 3px;
-  --radius-card: 6px;
+  --radius-button: 9999px;
+  --radius-card: 16px;
   
   /* Shadows */
-  --shadow-premium-sm: 0 2px 8px rgba(0,0,0,0.04);
-  --shadow-premium-md: 0 6px 20px rgba(0,0,0,0.06);
+  --shadow-premium-sm: 0 4px 16px rgba(0,0,0,0.4);
+  --shadow-premium-md: 0 8px 30px rgba(0,0,0,0.6);
+  --shadow-orange-glow: 0 4px 25px rgba(255, 69, 0, 0.45);
 }
 
 @layer base {
+  *, ::before, ::after {
+    font-family: "Quicksand", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+
+  .font-serif, [class*="font-serif"] {
+    font-family: "Quicksand", sans-serif !important;
+  }
+
   html {
     scroll-behavior: smooth;
+    font-family: "Quicksand", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color-scheme: dark;
+    background-color: #0a0a0a;
+    overflow-x: hidden;
+    max-width: 100vw;
   }
 
   body {
     @apply bg-background text-text-main tracking-normal font-sans antialiased;
+    font-family: "Quicksand", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: #0a0a0a;
+    overflow-x: hidden;
+    max-width: 100vw;
     background-image: 
-      linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
-    background-size: 40px 40px;
+      radial-gradient(circle 800px at 50% -20%, rgba(255, 69, 0, 0.18), transparent 80%),
+      radial-gradient(circle 600px at 85% 40%, rgba(255, 69, 0, 0.08), transparent 70%),
+      linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 100% 100%, 100% 100%, 40px 40px, 40px 40px;
     background-attachment: fixed;
+    color: #FFFFFF;
     /* Body Typography */
     @apply text-[16px] leading-[24px] lg:text-[18px] lg:leading-[28px];
   }
 
-  h1, h2, h3, h4 {
-    @apply font-display font-medium tracking-tight text-text-main uppercase;
+  /* Headings & Titles */
+  h1, h2, h3, h4, h5, h6, .font-display, [class*="font-display"] {
+    font-family: "Quicksand", -apple-system, BlinkMacSystemFont, sans-serif !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.01em;
+    @apply text-white uppercase;
   }
 
   h1 {
-    @apply text-[32px] leading-[40px] lg:text-[56px] lg:leading-[64px];
+    @apply text-[36px] leading-[44px] lg:text-[62px] lg:leading-[68px];
   }
 
   h2 {
-    @apply text-[26px] leading-[34px] lg:text-[44px] lg:leading-[52px] font-medium;
+    @apply text-[28px] leading-[36px] lg:text-[48px] lg:leading-[54px];
   }
 
   h3 {
-    @apply text-[22px] leading-[30px] lg:text-[32px] lg:leading-[40px] font-medium;
+    @apply text-[24px] leading-[32px] lg:text-[36px] lg:leading-[42px];
   }
 
   h4 {
-    @apply text-[18px] leading-[26px] lg:text-[24px] lg:leading-[32px] font-medium;
+    @apply text-[20px] leading-[28px] lg:text-[26px] lg:leading-[34px];
   }
 
   small {
     @apply text-[14px] leading-[20px] lg:text-[15px] lg:leading-[22px];
   }
+
+  input, select, textarea, button {
+    font-family: "Quicksand", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
 }
 
 @layer components {
   .section-spacing {
-    @apply py-20 lg:py-[120px]; /* 80px mobile / 120px desktop */
+    @apply py-20 lg:py-[120px] relative; /* 80px mobile / 120px desktop */
   }
 
   .container-custom {
-    @apply max-w-[1200px] mx-auto px-4 lg:px-6; /* 16px mobile / 24px desktop */
+    @apply max-w-[1200px] mx-auto px-4 lg:px-6 relative z-10; /* 16px mobile / 24px desktop */
   }
   
+  /* Pure Glass Card Sitewide */
   .premium-card {
-    @apply bg-white border border-border-interface p-6 rounded-[var(--radius-card)] transition-all duration-300;
+    @apply bg-white/[0.08] backdrop-blur-[16px] border border-white/15 p-6 rounded-2xl transition-all duration-300 text-white shadow-[0_1px_0_0_rgba(255,255,255,0.2)_inset,0_10px_30px_rgba(0,0,0,0.5)] hover:-translate-y-1.5 hover:shadow-[0_20px_40px_rgba(0,0,0,0.7),0_0_25px_rgba(255,69,0,0.25)] hover:border-white/30;
   }
+
+  .glass-card {
+    @apply bg-white/[0.08] backdrop-blur-[16px] border border-white/15 rounded-2xl transition-all duration-300 shadow-[0_1px_0_0_rgba(255,255,255,0.2)_inset,0_10px_30px_rgba(0,0,0,0.5)];
+  }
+
+  .glow-orange {
+    box-shadow: 0 0 35px 0 rgba(255, 69, 0, 0.45);
+  }
+
+  /* Primary Button Glass Pill Class */
+  .btn-gradient-orange {
+    @apply rounded-full bg-gradient-to-r from-[#FF4500] via-[#FF7A3D] to-[#FF8C00] text-white font-bold border border-white/20 shadow-[0_1px_0_0_rgba(255,255,255,0.3)_inset,0_4px_25px_rgba(255,69,0,0.45)] hover:shadow-[0_8px_32px_rgba(255,69,0,0.6)] hover:scale-[1.04] hover:brightness-110 active:scale-95 transition-all duration-300 ease-out animate-shimmer-streak relative overflow-hidden tracking-wider uppercase min-h-[44px] md:min-h-[50px] py-3 px-6 md:py-3.5 md:px-8 text-[14px] md:text-[15px];
+  }
+
+  /* Secondary Button Pure Glass Pill Class */
+  .btn-dark-pill {
+    @apply rounded-full bg-white/[0.08] backdrop-blur-md border border-white/25 text-white font-bold shadow-[inset_0_1px_0_0_rgba(255,255,255,0.25),0_4px_20px_rgba(0,0,0,0.4)] hover:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.4),0_6px_25px_rgba(0,0,0,0.5)] hover:bg-white/[0.18] hover:border-white/50 hover:scale-[1.04] active:scale-95 transition-all duration-300 ease-out relative overflow-hidden tracking-wider uppercase min-h-[44px] md:min-h-[50px] py-3 px-6 md:py-3.5 md:px-8 text-[14px] md:text-[15px];
+  }
+}
+
+/* Primary Button Moving Light Glow Streak Animation */
+@keyframes shimmer-sweep {
+  0% {
+    transform: translateX(-150%) skewX(-20deg);
+  }
+  100% {
+    transform: translateX(250%) skewX(-20deg);
+  }
+}
+
+.animate-shimmer-streak {
+  position: relative;
+  overflow: hidden;
+}
+
+.animate-shimmer-streak::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 55%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.45) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: translateX(-150%) skewX(-20deg);
+  animation: shimmer-sweep 2.4s ease-in-out infinite alternate;
+  pointer-events: none;
+  z-index: 1;
 }
 
 /* Custom Scrollbar */
@@ -95,9 +189,15 @@
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-surface;
+  background-color: #0e0e0e;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-zinc-300 rounded-full border-2 border-surface hover:bg-brand;
+  background-color: #2a2a2a;
+  border-radius: 9999px;
+  border: 2px solid #0e0e0e;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #FF5722;
 }

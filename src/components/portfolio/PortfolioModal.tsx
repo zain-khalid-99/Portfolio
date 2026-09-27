@@ -30,7 +30,7 @@ export const PortfolioModal = ({ project, onClose }: PortfolioModalProps) => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="absolute inset-0 bg-text-main/80 backdrop-blur-md"
+            className="absolute inset-0 bg-black/85 backdrop-blur-md"
           />
 
           {/* Modal Content */}
@@ -39,12 +39,12 @@ export const PortfolioModal = ({ project, onClose }: PortfolioModalProps) => {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
             transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-            className="relative w-full max-w-6xl max-h-full bg-white rounded-[6px] shadow-premium-2xl overflow-y-auto"
+            className="relative w-full max-w-6xl max-h-full bg-[#141414] border border-white/10 text-white rounded-[6px] shadow-2xl overflow-y-auto"
           >
             {/* Close Button */}
             <button
               onClick={onClose}
-              className="absolute top-6 right-6 z-10 p-3 bg-surface hover:bg-brand hover:text-white rounded-full transition-all text-text-main"
+              className="absolute top-6 right-6 z-10 p-3 bg-[#181818] border border-white/10 hover:bg-brand hover:text-white rounded-full transition-all text-white"
             >
               <X size={24} />
             </button>
@@ -86,7 +86,7 @@ export const PortfolioModal = ({ project, onClose }: PortfolioModalProps) => {
                       <span className="text-[10px] font-bold text-text-light uppercase tracking-[0.3em] block border-b border-border-interface pb-2">Results Achieved</span>
                       <div className="grid grid-cols-1 gap-4">
                         {project.results?.map((res, i) => (
-                           <div key={i} className="p-6 border border-border-interface rounded-[3px] bg-white group hover:border-brand transition-colors">
+                           <div key={i} className="p-6 border border-white/10 rounded-[3px] bg-[#181818] group hover:border-brand transition-colors">
                               <span className="text-3xl font-display font-bold text-brand block mb-1">{res.value}</span>
                               <span className="text-[10px] font-bold uppercase tracking-widest text-text-light">{res.label}</span>
                            </div>
@@ -95,12 +95,12 @@ export const PortfolioModal = ({ project, onClose }: PortfolioModalProps) => {
                     </div>
 
                     <div className="pt-10 border-t border-border-interface space-y-4">
-                       <Button fullWidth asChild className="h-16 uppercase">
+                       <Button fullWidth asChild>
                           <a href={project.fileUrl || project.link || "#"} target="_blank" rel="noopener noreferrer">
                             {project.fileUrl ? (project.fileType === 'excel' ? 'Download Report' : 'View Document') : 'View Live Website'}
                           </a>
                        </Button>
-                       <Button fullWidth variant="secondary" asChild className="h-16 uppercase">
+                       <Button fullWidth variant="secondary" asChild>
                           <Link to="/contact" onClick={onClose}>Book a Call</Link>
                        </Button>
                     </div>
@@ -137,7 +137,7 @@ export const PortfolioModal = ({ project, onClose }: PortfolioModalProps) => {
                       
                       {(project.fileType === 'excel' || (!['pdf', 'image'].includes(project.fileType || ''))) && (
                          <div className="py-20 px-8 border border-border-interface rounded-[6px] bg-surface flex flex-col items-center justify-center text-center shadow-premium-sm">
-                            <div className="w-24 h-24 bg-white border border-border-interface rounded-full flex items-center justify-center mb-8 shadow-premium-sm text-brand">
+                            <div className="w-24 h-24 bg-[#181818] border border-white/10 rounded-full flex items-center justify-center mb-8 shadow-premium-sm text-brand">
                                {project.fileType === 'excel' ? <FileSpreadsheet size={40} /> : <File size={40} />}
                             </div>
                             <h4 className="text-2xl font-display font-bold uppercase mb-4">Downloadable Resource</h4>

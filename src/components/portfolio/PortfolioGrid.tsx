@@ -64,7 +64,6 @@ export const PortfolioGrid = ({ initialLimit = 6, showFilters = true }: Portfoli
         <div className="flex justify-center mt-20">
           <Button 
             variant="secondary" 
-            className="px-12 h-16 uppercase"
             onClick={() => setVisibleCount(prev => prev + 3)}
           >
             Load More Work
@@ -74,7 +73,7 @@ export const PortfolioGrid = ({ initialLimit = 6, showFilters = true }: Portfoli
 
       {initialLimit === 3 && !showFilters && (
         <div className="flex justify-center mt-20">
-          <Button asChild variant="secondary" className="px-12 h-16 uppercase">
+          <Button asChild variant="secondary">
             <Link to="/portfolio">View All Work</Link>
           </Button>
         </div>

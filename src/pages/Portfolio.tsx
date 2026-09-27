@@ -43,7 +43,7 @@ export const Portfolio = () => {
   const hasActiveFilters = activeCategory !== 'All' || searchQuery !== '';
 
   return (
-    <main className="pt-24 min-h-screen bg-white">
+    <main className="pt-24 min-h-screen bg-transparent">
       {/* ── HERO ─────────────────────────────────────────────── */}
       <section className="section-spacing pb-0">
         <div className="container-custom">
@@ -56,11 +56,11 @@ export const Portfolio = () => {
               Curated Work
             </span>
             <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-12 mb-16">
-              <h1 className="max-w-3xl uppercase leading-[1.1]">
+              <h1 className="max-w-3xl uppercase leading-[1.1] text-white">
                 SELECTED <br />
-                <span className="text-zinc-300">SUCCESS STORIES.</span>
+                <span className="text-text-muted/60">SUCCESS STORIES.</span>
               </h1>
-              <p className="max-w-sm text-text-muted font-medium pb-6 border-b border-border-interface leading-relaxed lg:mb-2">
+              <p className="max-w-sm text-text-muted font-medium pb-6 border-b border-white/10 leading-relaxed lg:mb-2">
                 WordPress, Shopify, Performance Marketing, and Social Media projects — all focused on measurable results.
               </p>
             </div>
@@ -87,8 +87,8 @@ export const Portfolio = () => {
                     setSearchQuery(e.target.value);
                     setVisibleCount(6);
                   }}
-                  placeholder="Search projects, categories, or tags…"
-                  className="w-full h-14 pl-12 pr-12 border border-border-interface rounded-[6px] bg-surface text-[13px] font-medium text-text-main placeholder:text-text-light focus:outline-none focus:border-brand focus:ring-2 focus:ring-brand/10 transition-all"
+                  aria-label="Search projects, categories, or tags"
+                  className="w-full h-14 pl-12 pr-12 border border-white/10 rounded-[6px] bg-[#141414] text-[13px] font-medium text-white focus:outline-none focus:border-brand focus:ring-2 focus:ring-brand/20 transition-all"
                 />
                 {searchQuery && (
                   <button
@@ -106,7 +106,7 @@ export const Portfolio = () => {
                   'flex items-center gap-2 h-14 px-6 border rounded-[6px] text-[12px] font-bold uppercase tracking-widest transition-all',
                   showFilters
                     ? 'bg-brand text-white border-brand'
-                    : 'bg-surface border-border-interface text-text-muted hover:border-brand hover:text-text-main'
+                    : 'bg-[#141414] border-white/10 text-text-muted hover:border-brand hover:text-white'
                 )}
               >
                 <SlidersHorizontal size={15} />
@@ -121,7 +121,7 @@ export const Portfolio = () => {
               {hasActiveFilters && (
                 <button
                   onClick={clearAll}
-                  className="flex items-center gap-2 h-14 px-6 border border-border-interface rounded-[6px] text-[12px] font-bold uppercase tracking-widest text-text-muted hover:text-brand hover:border-brand transition-all bg-white"
+                  className="flex items-center gap-2 h-14 px-6 border border-white/10 rounded-[6px] text-[12px] font-bold uppercase tracking-widest text-text-muted hover:text-brand hover:border-brand transition-all bg-[#141414]"
                 >
                   <X size={14} />
                   Clear All
@@ -139,7 +139,7 @@ export const Portfolio = () => {
                   transition={{ duration: 0.35, ease: 'easeInOut' }}
                   className="overflow-hidden"
                 >
-                  <div className="p-6 bg-surface border border-border-interface rounded-[6px] flex flex-col gap-6">
+                  <div className="p-6 bg-[#141414] border border-white/10 rounded-[6px] flex flex-col gap-6">
                     {/* Category Filter */}
                     <div>
                       <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-text-light mb-3 block">
@@ -157,7 +157,7 @@ export const Portfolio = () => {
                               'relative px-5 py-2.5 rounded-[3px] text-[12px] font-bold uppercase tracking-widest transition-all duration-300',
                               activeCategory === cat
                                 ? 'bg-brand text-white shadow-premium-sm'
-                                : 'bg-white border border-border-interface text-text-muted hover:border-brand hover:text-text-main'
+                                : 'bg-[#181818] border border-white/10 text-text-muted hover:border-brand hover:text-white'
                             )}
                           >
                             {cat}
@@ -189,7 +189,7 @@ export const Portfolio = () => {
                   </span>
                 )}
                 {searchQuery && (
-                  <span className="flex items-center gap-1.5 px-3 py-1.5 bg-surface border border-border-interface text-text-muted rounded-[3px] text-[11px] font-bold uppercase tracking-wide">
+                  <span className="flex items-center gap-1.5 px-3 py-1.5 bg-[#141414] border border-white/10 text-text-muted rounded-[3px] text-[11px] font-bold uppercase tracking-wide">
                     "{searchQuery}"
                     <button onClick={() => setSearchQuery('')}>
                       <X size={11} />
@@ -232,10 +232,10 @@ export const Portfolio = () => {
                   animate={{ opacity: 1 }}
                   className="col-span-full flex flex-col items-center justify-center py-32 text-center"
                 >
-                  <div className="w-20 h-20 rounded-full bg-surface border border-border-interface flex items-center justify-center mb-6">
+                  <div className="w-20 h-20 rounded-full bg-[#141414] border border-white/10 flex items-center justify-center mb-6">
                     <Search size={28} className="text-text-light" />
                   </div>
-                  <h3 className="text-2xl font-display font-bold uppercase mb-4">
+                  <h3 className="text-2xl font-display font-bold uppercase mb-4 text-white">
                     No Projects Found
                   </h3>
                   <p className="text-text-muted font-medium max-w-sm mb-8">
@@ -265,7 +265,7 @@ export const Portfolio = () => {
       </section>
 
       {/* ── CTA ──────────────────────────────────────────────── */}
-      <section className="section-spacing bg-surface border-t border-border-interface">
+      <section className="section-spacing bg-transparent border-t border-white/10">
         <div className="container-custom text-center">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
@@ -276,7 +276,7 @@ export const Portfolio = () => {
             <span className="text-[12px] font-bold text-brand uppercase tracking-[0.4em] mb-6 block">
               Ready to Start?
             </span>
-            <h2 className="mb-8 uppercase">
+            <h2 className="mb-8 uppercase text-white">
               LET'S BUILD SOMETHING <br />
               <span className="text-brand">THAT PERFORMS.</span>
             </h2>
@@ -284,10 +284,10 @@ export const Portfolio = () => {
               Every project above started with a conversation. Let's talk about yours.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild className="w-full sm:w-auto h-16 px-12 gap-2 text-[13px] font-bold uppercase tracking-widest">
+              <Button asChild className="w-full sm:w-auto">
                 <Link to="/contact">Book a Call</Link>
               </Button>
-              <Button variant="secondary" asChild className="w-full sm:w-auto h-16 px-12 gap-2 text-[13px] font-bold uppercase tracking-widest">
+              <Button variant="secondary" asChild className="w-full sm:w-auto">
                 <Link to="/free-audit">Get Free Audit</Link>
               </Button>
             </div>

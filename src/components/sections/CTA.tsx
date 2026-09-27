@@ -11,37 +11,36 @@ import { Link } from 'react-router-dom';
 
 export const CTA = () => {
   return (
-    <section id="contact" className="section-spacing bg-zinc-950 relative overflow-hidden">
+    <section id="contact" className="section-spacing bg-transparent relative overflow-hidden">
       <div className="container-custom relative z-10 text-center">
         <motion.div
            initial={{ opacity: 0, y: 30 }}
            whileInView={{ opacity: 1, y: 0 }}
            viewport={{ once: true }}
-           className="max-w-5xl mx-auto"
+           className="max-w-5xl mx-auto py-16 md:py-24 px-8 md:px-16 rounded-[24px] bg-gradient-to-r from-[#FF4500] to-[#FF7A3D] text-white shadow-[0_0_50px_rgba(255,69,0,0.3)] relative overflow-hidden"
         >
-          <span className="text-zinc-500 text-[12px] font-black uppercase tracking-[4px] mb-8 block">
+          <span className="text-white/80 text-[12px] font-black uppercase tracking-[4px] mb-6 block">
             READY TO SCALE?
           </span>
-          <h2 className="mb-12 text-white">
-            LET’S BUILD SOMETHING <br /> <span className="text-zinc-700">THAT PERFORMS.</span>
+          <h2 className="mb-10 text-white">
+            LET’S BUILD SOMETHING <br /> <span className="text-white/80">THAT PERFORMS.</span>
           </h2>
           
-          <div className="flex flex-col items-center gap-12">
-            <p className="max-w-2xl text-zinc-400">
+          <div className="flex flex-col items-center gap-10">
+            <p className="max-w-2xl text-white/90 font-medium text-lg leading-relaxed">
               If your website isn’t generating leads or sales, it’s time to fix that. Stop guessing and start scaling with a data-driven approach.
             </p>
             
             <div className="flex flex-col md:flex-row items-center justify-center gap-8 w-full md:w-auto">
-              <Button asChild fullWidth className="md:w-auto group relative overflow-hidden h-16 px-10">
-                <Link to="/contact" className="flex items-center gap-2">
+              <Button asChild fullWidth className="md:w-auto group relative overflow-hidden bg-white text-[#FF4500] hover:bg-white/95 shadow-lg border-none hover:scale-[1.04] transition-all duration-300">
+                <Link to="/contact">
                   Book Strategy Call
                   <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-                  <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out" />
                 </Link>
               </Button>
-              <div className="text-white flex flex-col items-center md:items-start text-center md:text-left md:border-l border-white/10 md:pl-8">
-                 <span className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest mb-2">Direct Contact</span>
-                 <a href="mailto:zain.developer@gmail.com" className="text-lg md:text-xl font-display font-bold hover:text-brand transition-colors tracking-tight">zain.developer@gmail.com</a>
+              <div className="text-white flex flex-col items-center md:items-start text-center md:text-left md:border-l border-white/20 md:pl-8">
+                 <span className="text-[10px] font-bold text-white/80 uppercase tracking-widest mb-1">Direct Contact</span>
+                 <a href="mailto:zain.developer@gmail.com" className="text-lg md:text-xl font-display font-bold hover:text-white/80 transition-colors tracking-tight">zain.developer@gmail.com</a>
               </div>
             </div>
           </div>
@@ -50,10 +49,10 @@ export const CTA = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.6 }}
-            className="flex items-center justify-center gap-3 mt-12 text-sm text-zinc-400 font-medium"
+            className="flex items-center justify-center gap-3 mt-12 text-sm text-white/80 font-medium"
           >
             <div className="flex">
-              {[1,2,3,4,5].map(i => <Star key={i} size={14} className="fill-brand text-brand" />)}
+              {[1,2,3,4,5].map(i => <Star key={i} size={14} className="fill-white text-white" />)}
             </div>
             <span>No obligations. Just a free, highly actionable strategy session.</span>
           </motion.div>

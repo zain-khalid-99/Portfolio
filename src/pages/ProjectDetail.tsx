@@ -29,9 +29,9 @@ export const ProjectDetail = () => {
   }
 
   return (
-    <main className="pt-24 min-h-screen bg-white">
+    <main className="pt-24 min-h-screen bg-transparent">
       {/* 1. HERO SECTION */}
-      <section className="section-spacing bg-white">
+      <section className="section-spacing bg-transparent">
         <div className="container-custom">
           <Link to="/portfolio" className="inline-flex items-center gap-2 text-[10px] font-bold text-text-muted uppercase tracking-widest hover:text-brand transition-colors mb-12">
             <ArrowLeft size={14} />
@@ -45,24 +45,24 @@ export const ProjectDetail = () => {
               transition={{ duration: 0.8 }}
             >
               <span className="text-[12px] font-bold text-brand uppercase tracking-[0.4em] mb-6 block">{project.category}</span>
-              <h1 className="mb-8 uppercase leading-tight">{project.title}</h1>
+              <h1 className="mb-8 uppercase leading-tight text-white">{project.title}</h1>
               <p className="text-xl text-text-muted font-medium max-w-xl">
                 {project.description}
               </p>
             </motion.div>
             
-            <div className="flex flex-wrap gap-8 py-8 border-t border-border-interface w-full">
+            <div className="flex flex-wrap gap-8 py-8 border-t border-white/10 w-full">
               <div>
                 <span className="text-[10px] font-bold text-text-light uppercase tracking-widest block mb-2">Client</span>
-                <span className="text-[13px] font-bold text-text-main uppercase">{project.client}</span>
+                <span className="text-[13px] font-bold text-white uppercase">{project.client}</span>
               </div>
               <div>
                 <span className="text-[10px] font-bold text-text-light uppercase tracking-widest block mb-2">Year</span>
-                <span className="text-[13px] font-bold text-text-main uppercase">{project.year}</span>
+                <span className="text-[13px] font-bold text-white uppercase">{project.year}</span>
               </div>
               <div>
                 <span className="text-[10px] font-bold text-text-light uppercase tracking-widest block mb-2">Industry</span>
-                <span className="text-[13px] font-bold text-text-main uppercase">{project.mainCategory}</span>
+                <span className="text-[13px] font-bold text-white uppercase">{project.mainCategory}</span>
               </div>
             </div>
           </div>
@@ -71,7 +71,7 @@ export const ProjectDetail = () => {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
-            className="aspect-[21/9] rounded-[6px] overflow-hidden border border-border-interface shadow-premium-lg bg-surface"
+            className="aspect-[21/9] rounded-[6px] overflow-hidden border border-white/10 shadow-premium-lg bg-[#141414]"
           >
             <img 
               src={project.image} 
@@ -84,17 +84,17 @@ export const ProjectDetail = () => {
       </section>
 
       {/* 2. OVERVIEW & PROBLEM */}
-      <section className="section-spacing bg-surface border-y border-border-interface">
+      <section className="section-spacing bg-[#111111]/60 border-y border-white/10">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
             <div>
-              <h2 className="mb-8 text-xl uppercase tracking-widest">Project Overview</h2>
+              <h2 className="mb-8 text-xl uppercase tracking-widest text-white">Project Overview</h2>
               <p className="text-lg text-text-muted font-medium leading-relaxed">
                 {project.fullDescription}
               </p>
             </div>
             <div>
-              <h2 className="mb-8 text-xl uppercase tracking-widest">The Problem</h2>
+              <h2 className="mb-8 text-xl uppercase tracking-widest text-white">The Problem</h2>
               <p className="text-lg text-text-muted font-medium leading-relaxed">
                 {project.challenge}
               </p>
@@ -104,29 +104,29 @@ export const ProjectDetail = () => {
       </section>
 
       {/* 4. SOLUTION */}
-      <section className="section-spacing bg-white">
+      <section className="section-spacing bg-transparent">
         <div className="container-custom">
           <div className="max-w-4xl">
-            <h2 className="mb-12 uppercase">The Solution</h2>
-            <p className="text-2xl text-text-main font-medium leading-relaxed uppercase tracking-tight mb-12">
+            <h2 className="mb-12 uppercase text-white">The Solution</h2>
+            <p className="text-2xl text-white font-medium leading-relaxed uppercase tracking-tight mb-12">
               {project.solution}
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-16">
               <div className="flex gap-6">
-                <div className="w-12 h-12 rounded-full border border-brand bg-brand/5 flex items-center justify-center text-brand flex-shrink-0">
+                <div className="w-12 h-12 rounded-full border border-brand bg-brand/10 flex items-center justify-center text-brand flex-shrink-0">
                   <Zap size={20} />
                 </div>
                 <div>
-                  <h4 className="text-[14px] font-bold uppercase mb-2">High Efficiency</h4>
+                  <h4 className="text-[14px] font-bold uppercase mb-2 text-white">High Efficiency</h4>
                   <p className="text-sm text-text-muted font-medium">Built for rapid interactions and zero lag in user journeys.</p>
                 </div>
               </div>
               <div className="flex gap-6">
-                <div className="w-12 h-12 rounded-full border border-brand bg-brand/5 flex items-center justify-center text-brand flex-shrink-0">
+                <div className="w-12 h-12 rounded-full border border-brand bg-brand/10 flex items-center justify-center text-brand flex-shrink-0">
                   <Target size={20} />
                 </div>
                 <div>
-                  <h4 className="text-[14px] font-bold uppercase mb-2">Intent Focused</h4>
+                  <h4 className="text-[14px] font-bold uppercase mb-2 text-white">Intent Focused</h4>
                   <p className="text-sm text-text-muted font-medium">Every design choice was driven by data and user purchase intent.</p>
                 </div>
               </div>
@@ -136,7 +136,7 @@ export const ProjectDetail = () => {
       </section>
 
       {/* 5. RESULTS */}
-      <section className="section-spacing bg-text-main text-white">
+      <section className="section-spacing bg-[#0a0a0a] border-y border-white/10 text-white">
         <div className="container-custom">
           <div className="flex flex-col items-center text-center mb-20">
             <span className="text-brand font-bold uppercase tracking-[0.4em] mb-4 text-[12px]">Outcome</span>
@@ -144,7 +144,7 @@ export const ProjectDetail = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {project.results?.map((res, idx) => (
-              <div key={idx} className="p-12 bg-white/5 border border-white/10 rounded-[6px] text-center group hover:border-brand/40 transition-colors">
+              <div key={idx} className="p-12 bg-[#141414] border border-white/10 rounded-[6px] text-center group hover:border-brand/40 transition-colors">
                 <span className="text-4xl md:text-5xl font-display font-bold text-brand block mb-4 group-hover:scale-110 transition-transform">{res.value}</span>
                 <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-white/60">{res.label}</span>
               </div>
@@ -155,7 +155,7 @@ export const ProjectDetail = () => {
 
       {/* 6. VISUAL SHOWCASE */}
       {project.gallery && project.gallery.length > 0 && (
-        <section className="section-spacing bg-white">
+        <section className="section-spacing bg-transparent">
           <div className="container-custom">
             <h2 className="mb-20 text-center uppercase tracking-widest text-xl font-body font-normal text-text-muted">Process & Interface</h2>
             <div className="grid grid-cols-1 gap-12">
@@ -165,7 +165,7 @@ export const ProjectDetail = () => {
                    initial={{ opacity: 0, y: 40 }}
                    whileInView={{ opacity: 1, y: 0 }}
                    viewport={{ once: true }}
-                   className="rounded-[6px] overflow-hidden border border-border-interface bg-surface"
+                   className="rounded-[6px] overflow-hidden border border-white/10 bg-[#141414]"
                  >
                    <img 
                     src={img} 
@@ -181,11 +181,11 @@ export const ProjectDetail = () => {
       )}
 
       {/* 7. NEXT PROJECT NAVIGATION */}
-      <section className="border-t border-border-interface">
-        <Link to={`/portfolio/${nextProject.slug}`} className="group block py-32 bg-surface hover:bg-brand transition-colors duration-700">
+      <section className="border-t border-white/10">
+        <Link to={`/portfolio/${nextProject.slug}`} className="group block py-32 bg-[#141414] hover:bg-brand transition-colors duration-700">
           <div className="container-custom text-center">
             <span className="text-[12px] font-bold text-text-muted group-hover:text-white/60 uppercase tracking-[0.4em] mb-8 block transition-colors">UP NEXT</span>
-            <h2 className="text-4xl md:text-6xl uppercase group-hover:text-white transition-colors mb-12">
+            <h2 className="text-4xl md:text-6xl uppercase group-hover:text-white transition-colors mb-12 text-white">
               {nextProject.title}
             </h2>
             <div className="inline-flex items-center gap-4 text-brand group-hover:text-white font-bold uppercase tracking-widest text-[14px] transition-colors">
@@ -197,15 +197,15 @@ export const ProjectDetail = () => {
       </section>
 
       {/* 8. CTA SECTION */}
-      <section className="section-spacing bg-white">
+      <section className="section-spacing bg-transparent">
         <div className="container-custom text-center">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="max-w-4xl mx-auto py-20 lg:py-32 px-10 bg-surface rounded-[6px] border border-border-interface"
+            className="max-w-4xl mx-auto py-20 lg:py-32 px-10 bg-[#141414] rounded-[6px] border border-white/10"
           >
-            <h2 className="mb-8 uppercase">
+            <h2 className="mb-8 uppercase text-white">
               WANT RESULTS <br />
               <span className="text-brand">LIKE THESE?</span>
             </h2>
@@ -213,11 +213,11 @@ export const ProjectDetail = () => {
               Every business has a growth ceiling. My job is to find it and break it through better design and data.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-               <Button className="w-full sm:w-auto h-16 px-12 gap-2 text-[13px] font-bold uppercase">
+               <Button className="w-full sm:w-auto">
                 <Calendar size={18} />
                 Book a call
               </Button>
-              <Button variant="secondary" className="w-full sm:w-auto h-16 px-12 gap-2 text-[13px] font-bold uppercase">
+              <Button variant="secondary" className="w-full sm:w-auto">
                 <TrendingUp size={18} />
                 Scale your brand
               </Button>

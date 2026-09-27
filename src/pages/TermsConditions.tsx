@@ -3,7 +3,7 @@ import { motion } from 'motion/react';
 
 export const TermsConditions = () => {
   return (
-    <main className="pt-24 min-h-screen bg-white">
+    <main className="pt-24 min-h-screen bg-transparent">
       <section className="section-spacing md:pt-32">
         <div className="container-custom max-w-4xl">
           <motion.div
@@ -11,7 +11,7 @@ export const TermsConditions = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-4xl md:text-5xl font-display font-bold mb-6 mt-12 text-text-main">Terms & Conditions</h1>
+            <h1 className="text-4xl md:text-5xl font-display font-bold mb-6 mt-12 text-white">Terms & Conditions</h1>
             <p className="text-text-muted font-medium mb-12">Last Updated: [April 2026]</p>
 
             <div className="space-y-12 text-text-muted font-medium pb-24">

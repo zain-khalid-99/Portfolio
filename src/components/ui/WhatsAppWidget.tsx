@@ -26,7 +26,7 @@ export const WhatsAppWidget = () => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ duration: 0.2 }}
-            className="mb-4 w-[320px] bg-white rounded-2xl shadow-premium-2xl border border-border-interface overflow-hidden"
+            className="mb-4 w-[320px] bg-[#141414] rounded-2xl shadow-premium-2xl border border-white/10 overflow-hidden"
           >
             {/* Header */}
             <div className="bg-[#25D366] p-6 text-white flex items-center justify-between">
@@ -48,9 +48,9 @@ export const WhatsAppWidget = () => {
             </div>
             
             {/* Body */}
-            <div className="p-6 bg-[#E5DDD5]/20">
-              <div className="bg-white p-4 rounded-2xl rounded-tl-sm shadow-sm border border-border-interface mb-2 w-[85%]">
-                <p className="text-sm text-text-main">
+            <div className="p-6 bg-[#181818]">
+              <div className="bg-[#222222] p-4 rounded-2xl rounded-tl-sm shadow-sm border border-white/10 mb-2 w-[85%]">
+                <p className="text-sm text-white">
                   Hi there! 👋<br/><br/>
                   Ready to scale your business? Let me know how I can help you today.
                 </p>
@@ -59,7 +59,7 @@ export const WhatsAppWidget = () => {
             </div>
 
             {/* Footer */}
-            <div className="p-4 bg-white border-t border-border-interface">
+            <div className="p-4 bg-[#141414] border-t border-white/10">
               <button
                 onClick={handleWhatsAppClick}
                 className="w-full bg-[#25D366] hover:bg-[#1DA851] text-white py-3 px-4 rounded-xl flex items-center justify-center gap-2 font-bold text-sm transition-colors shadow-sm"

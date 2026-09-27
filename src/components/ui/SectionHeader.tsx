@@ -32,7 +32,7 @@ export const SectionHeader = ({ title, subtitle, align = 'left', className }: Se
         </span>
       )}
       <h2 className={cn(
-        "text-4xl md:text-5xl lg:text-6xl font-black text-zinc-900 leading-tight md:leading-tight lg:leading-tight",
+        "text-4xl md:text-5xl lg:text-6xl font-black text-text-main leading-tight md:leading-tight lg:leading-tight",
         align === 'center' ? 'max-w-3xl mx-auto' : ''
       )}>
         {title}

@@ -20,10 +20,10 @@ import { Link } from 'react-router-dom';
 
 export const SocialMediaMarketing = () => {
   return (
-    <main className="pt-24 min-h-screen bg-white">
+    <main className="pt-24 min-h-screen bg-transparent">
 
       {/* 1. HERO SECTION */}
-      <section className="section-spacing bg-white">
+      <section className="section-spacing bg-transparent">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div
@@ -34,7 +34,7 @@ export const SocialMediaMarketing = () => {
               <span className="text-[12px] font-bold text-brand uppercase tracking-[0.4em] mb-6 block">
                 Service // Marketing
               </span>
-              <h1 className="mb-8 uppercase leading-[1.1]">
+              <h1 className="mb-8 uppercase leading-[1.1] text-white">
                 SOCIAL MEDIA <br />
                 MARKETING <br />
                 <span className="text-brand">THAT GROWS.</span>
@@ -43,16 +43,15 @@ export const SocialMediaMarketing = () => {
                 Strategic social media marketing designed to build authority, attract qualified leads, and turn attention into measurable business growth across every platform.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button asChild className="w-full sm:w-auto px-12 h-16 uppercase gap-2 text-[12px] font-bold tracking-widest relative overflow-hidden group">
-                  <Link to="/contact" className="flex items-center gap-2">
-                    <Calendar size={18} className="group-hover:rotate-12 transition-transform" />
+                <Button asChild className="w-full sm:w-auto">
+                  <Link to="/contact">
+                    <Calendar size={18} />
                     Book a Call
-                    <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out" />
                   </Link>
                 </Button>
-                <Button variant="secondary" asChild className="w-full sm:w-auto px-12 h-16 uppercase gap-2 text-[12px] font-bold tracking-widest group">
-                  <Link to="/free-audit" className="flex items-center gap-2">
-                    <Search size={18} className="group-hover:scale-110 transition-transform" />
+                <Button variant="secondary" asChild className="w-full sm:w-auto">
+                  <Link to="/free-audit">
+                    <Search size={18} />
                     Get Free Audit
                   </Link>
                 </Button>
@@ -67,7 +66,7 @@ export const SocialMediaMarketing = () => {
                 scale: { duration: 0.8, delay: 0.2 },
                 y: { duration: 6, repeat: Infinity, ease: 'easeInOut' },
               }}
-              className="relative aspect-square lg:aspect-video rounded-[6px] overflow-hidden border border-border-interface shadow-premium-md bg-surface group"
+              className="relative aspect-square lg:aspect-video rounded-[6px] overflow-hidden border border-white/10 shadow-premium-md bg-[#141414] group"
             >
               <img
                 src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=1000&auto=format&fit=crop"
@@ -82,7 +81,7 @@ export const SocialMediaMarketing = () => {
       </section>
 
       {/* 2. PROBLEM SECTION */}
-      <section className="section-spacing bg-surface border-y border-border-interface">
+      <section className="section-spacing bg-[#111111]/60 border-y border-white/10">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -91,7 +90,7 @@ export const SocialMediaMarketing = () => {
             transition={{ duration: 0.6 }}
             className="max-w-[700px] mx-auto text-center"
           >
-            <h2 className="mb-8 uppercase">THE PROBLEM</h2>
+            <h2 className="mb-8 uppercase text-white">THE PROBLEM</h2>
             <p className="text-xl text-text-muted font-medium leading-relaxed">
               Most businesses post content consistently but still struggle to grow. Low engagement, weak branding, inconsistent messaging, and poor strategy lead to wasted time, weak conversions, and missed revenue opportunities.
             </p>
@@ -100,7 +99,7 @@ export const SocialMediaMarketing = () => {
       </section>
 
       {/* 3. SOLUTION SECTION */}
-      <section className="section-spacing bg-white">
+      <section className="section-spacing bg-transparent">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
             <motion.div
@@ -109,7 +108,7 @@ export const SocialMediaMarketing = () => {
               viewport={{ once: true, margin: '-100px' }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="mb-8 uppercase">THE SOLUTION</h2>
+              <h2 className="mb-8 uppercase text-white">THE SOLUTION</h2>
               <p className="text-lg text-text-muted font-medium leading-relaxed">
                 I build data-driven social media systems that combine branding, content strategy, audience psychology, and performance marketing to help businesses grow faster online.
               </p>
@@ -145,13 +144,13 @@ export const SocialMediaMarketing = () => {
                   transition={{ duration: 0.5, delay: idx * 0.1 }}
                   whileHover={{ scale: 1.02, x: 5 }}
                   key={idx}
-                  className="flex gap-6 p-6 border border-border-interface rounded-[6px] bg-surface group hover:border-brand hover:shadow-premium-sm transition-all cursor-default"
+                  className="flex gap-6 p-6 border border-white/10 rounded-[6px] bg-[#141414] group hover:border-brand hover:shadow-premium-sm transition-all cursor-default"
                 >
-                  <div className="w-10 h-10 rounded-[3px] bg-white flex items-center justify-center border border-border-interface group-hover:bg-brand group-hover:text-white transition-colors duration-300 flex-shrink-0">
+                  <div className="w-10 h-10 rounded-[3px] bg-[#1c1c1c] text-white flex items-center justify-center border border-white/10 group-hover:bg-brand group-hover:text-white transition-colors duration-300 flex-shrink-0">
                     <item.icon size={18} strokeWidth={1.5} />
                   </div>
                   <div>
-                    <h4 className="text-[14px] font-bold uppercase tracking-tight text-text-main mb-1">{item.title}</h4>
+                    <h4 className="text-[14px] font-bold uppercase tracking-tight text-white mb-1">{item.title}</h4>
                     <p className="text-sm text-text-muted font-medium">{item.desc}</p>
                   </div>
                 </motion.div>
@@ -162,10 +161,10 @@ export const SocialMediaMarketing = () => {
       </section>
 
       {/* 4. WHAT YOU GET */}
-      <section className="section-spacing bg-surface border-y border-border-interface">
+      <section className="section-spacing bg-[#111111]/60 border-y border-white/10">
         <div className="container-custom">
           <div className="text-center mb-20">
-            <h2 className="mb-6 uppercase">WHAT YOU GET</h2>
+            <h2 className="mb-6 uppercase text-white">WHAT YOU GET</h2>
             <p className="text-text-muted font-medium">Fully managed, conversion-focused social media marketing solutions.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -184,12 +183,12 @@ export const SocialMediaMarketing = () => {
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
                 whileHover={{ y: -5 }}
                 key={idx}
-                className="p-10 bg-white rounded-[6px] border border-border-interface shadow-premium-sm hover:shadow-premium-md transition-all group cursor-default"
+                className="p-10 bg-[#141414] rounded-[6px] border border-white/10 shadow-premium-sm hover:shadow-premium-md hover:border-brand/40 transition-all group cursor-default"
               >
-                <div className="w-12 h-12 rounded-[3px] bg-surface flex items-center justify-center mb-8 border border-border-interface group-hover:bg-brand group-hover:text-white transition-colors duration-300">
+                <div className="w-12 h-12 rounded-[3px] bg-[#1c1c1c] text-white flex items-center justify-center mb-8 border border-white/10 group-hover:bg-brand group-hover:text-white transition-colors duration-300">
                   <feature.icon size={24} strokeWidth={1.5} className="group-hover:scale-110 transition-transform" />
                 </div>
-                <h3 className="mb-4 uppercase text-lg">{feature.title}</h3>
+                <h3 className="mb-4 uppercase text-lg text-white">{feature.title}</h3>
                 <p className="text-sm text-text-muted font-medium leading-relaxed">{feature.desc}</p>
               </motion.div>
             ))}
@@ -198,7 +197,7 @@ export const SocialMediaMarketing = () => {
       </section>
 
       {/* 5. BUSINESS RESULTS */}
-      <section className="section-spacing bg-white">
+      <section className="section-spacing bg-transparent">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <motion.div
@@ -207,7 +206,7 @@ export const SocialMediaMarketing = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="mb-8 uppercase">BUSINESS RESULTS</h2>
+              <h2 className="mb-8 uppercase text-white">BUSINESS RESULTS</h2>
               <p className="text-lg text-text-muted font-medium max-w-xl">
                 My strategies are focused on outcomes that directly impact business growth, visibility, and customer acquisition.
               </p>
@@ -226,7 +225,7 @@ export const SocialMediaMarketing = () => {
                   transition={{ duration: 0.5, delay: idx * 0.1 }}
                   whileHover={{ scale: 1.05 }}
                   key={idx}
-                  className="p-10 bg-surface border border-border-interface rounded-[6px] text-center hover:shadow-premium-sm transition-shadow cursor-default"
+                  className="p-10 bg-[#141414] border border-white/10 rounded-[6px] text-center hover:shadow-premium-sm transition-shadow cursor-default"
                 >
                   <span className="text-4xl font-display font-bold text-brand block mb-2">{stat.val}</span>
                   <span className="text-[10px] font-bold uppercase tracking-widest text-text-muted">{stat.title}</span>
@@ -238,13 +237,13 @@ export const SocialMediaMarketing = () => {
       </section>
 
       {/* 6. METHODOLOGY — THE GROWTH FRAMEWORK */}
-      <section className="section-spacing bg-surface border-y border-border-interface">
+      <section className="section-spacing bg-[#111111]/60 border-y border-white/10">
         <div className="container-custom">
           <div className="text-center mb-20">
             <span className="text-[12px] font-bold text-brand uppercase tracking-[0.4em] mb-4 block">
               Our Methodology
             </span>
-            <h2 className="uppercase">
+            <h2 className="uppercase text-white">
               THE GROWTH <br />
               <span className="text-brand">FRAMEWORK</span>
             </h2>
@@ -263,15 +262,15 @@ export const SocialMediaMarketing = () => {
                 transition={{ duration: 0.5, delay: idx * 0.15 }}
                 whileHover={{ y: -5 }}
                 key={idx}
-                className="p-10 bg-white rounded-[6px] border border-border-interface shadow-premium-sm hover:shadow-premium-md hover:border-brand transition-all group cursor-default"
+                className="p-10 bg-[#141414] rounded-[6px] border border-white/10 shadow-premium-sm hover:shadow-premium-md hover:border-brand transition-all group cursor-default"
               >
                 <div className="flex items-center justify-between mb-8">
                   <span className="text-[10px] font-bold uppercase tracking-widest text-text-light">{phase.step}</span>
-                  <div className="w-10 h-10 rounded-[3px] bg-surface flex items-center justify-center border border-border-interface group-hover:bg-brand group-hover:text-white transition-colors duration-300">
+                  <div className="w-10 h-10 rounded-[3px] bg-[#1c1c1c] text-white flex items-center justify-center border border-white/10 group-hover:bg-brand group-hover:text-white transition-colors duration-300">
                     <phase.icon size={18} strokeWidth={1.5} />
                   </div>
                 </div>
-                <h3 className="mb-4 uppercase text-lg">{phase.title}</h3>
+                <h3 className="mb-4 uppercase text-lg text-white">{phase.title}</h3>
                 <p className="text-sm text-text-muted font-medium leading-relaxed">{phase.desc}</p>
               </motion.div>
             ))}
@@ -280,15 +279,15 @@ export const SocialMediaMarketing = () => {
       </section>
 
       {/* 7. FINAL CTA */}
-      <section className="section-spacing bg-white">
+      <section className="section-spacing bg-transparent">
         <div className="container-custom text-center">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="max-w-4xl mx-auto py-20 lg:py-32 px-10 bg-surface rounded-[6px] border border-border-interface"
+            className="max-w-4xl mx-auto py-20 lg:py-32 px-10 bg-[#141414] rounded-[6px] border border-white/10"
           >
-            <h2 className="mb-8 uppercase">
+            <h2 className="mb-8 uppercase text-white">
               LET'S BUILD A SOCIAL PRESENCE <br />
               <span className="text-brand">THAT DRIVES RESULTS.</span>
             </h2>
@@ -296,16 +295,15 @@ export const SocialMediaMarketing = () => {
               If your brand isn't getting attention, engagement, or leads — it's time to implement a strategy built for growth and conversions.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild className="w-full sm:w-auto h-16 px-12 gap-2 text-[13px] font-bold uppercase tracking-widest relative overflow-hidden group">
-                <Link to="/contact" className="flex items-center gap-2">
-                  <Calendar size={18} className="group-hover:rotate-12 transition-transform" />
+              <Button asChild className="w-full sm:w-auto">
+                <Link to="/contact">
+                  <Calendar size={18} />
                   Book a Call
-                  <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out" />
                 </Link>
               </Button>
-              <Button variant="secondary" asChild className="w-full sm:w-auto h-16 px-12 gap-2 text-[13px] font-bold uppercase tracking-widest group">
-                <Link to="/free-audit" className="flex items-center gap-2">
-                  <Search size={18} className="group-hover:scale-110 transition-transform" />
+              <Button variant="secondary" asChild className="w-full sm:w-auto">
+                <Link to="/free-audit">
+                  <Search size={18} />
                   Free Social Media Audit
                 </Link>
               </Button>

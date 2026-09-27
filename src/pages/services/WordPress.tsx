@@ -17,9 +17,9 @@ import { Link } from 'react-router-dom';
 
 export const WordPress = () => {
   return (
-    <main className="pt-24 min-h-screen bg-white">
+    <main className="pt-24 min-h-screen bg-transparent">
       {/* 1. HERO SECTION */}
-      <section className="section-spacing bg-white">
+      <section className="section-spacing bg-transparent">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div
@@ -28,7 +28,7 @@ export const WordPress = () => {
               transition={{ duration: 0.8 }}
             >
               <span className="text-[12px] font-bold text-brand uppercase tracking-[0.4em] mb-6 block">Service // Development</span>
-              <h1 className="mb-8 uppercase leading-[1.1]">
+              <h1 className="mb-8 uppercase leading-[1.1] text-white">
                 WORDPRESS <br /> 
                 <span className="text-brand">WEB DEVELOPMENT.</span>
               </h1>
@@ -36,14 +36,14 @@ export const WordPress = () => {
                 I design and develop high-performance WordPress websites built with one goal — to help your business grow. Every website is fast, scalable, and optimized to convert visitors into customers.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button asChild className="w-full sm:w-auto px-12 h-16 uppercase gap-2 text-[12px] font-bold tracking-widest">
-                  <Link to="/contact" className="flex items-center gap-2">
+                <Button asChild className="w-full sm:w-auto">
+                  <Link to="/contact">
                     <Calendar size={18} />
                     Book a call
                   </Link>
                 </Button>
-                <Button variant="secondary" asChild className="w-full sm:w-auto px-12 h-16 uppercase gap-2 text-[12px] font-bold tracking-widest">
-                  <Link to="/free-audit" className="flex items-center gap-2">
+                <Button variant="secondary" asChild className="w-full sm:w-auto">
+                  <Link to="/free-audit">
                     <Search size={18} />
                     Get Free Audit
                   </Link>
@@ -55,7 +55,7 @@ export const WordPress = () => {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative aspect-square lg:aspect-video rounded-[6px] overflow-hidden border border-border-interface shadow-premium-md bg-surface"
+              className="relative aspect-square lg:aspect-video rounded-[6px] overflow-hidden border border-white/10 shadow-premium-md bg-[#141414]"
             >
               <img 
                 src="https://images.unsplash.com/photo-1551033406-611cf9a28f67?q=80&w=1000&auto=format&fit=crop" 
@@ -70,10 +70,10 @@ export const WordPress = () => {
       </section>
 
       {/* 2. PROBLEM SECTION */}
-      <section className="section-spacing bg-surface border-y border-border-interface">
+      <section className="section-spacing bg-[#111111]/60 border-y border-white/10">
         <div className="container-custom">
           <div className="max-w-[700px] mx-auto text-center">
-            <h2 className="mb-8 uppercase">THE PROBLEM</h2>
+            <h2 className="mb-8 uppercase text-white">THE PROBLEM</h2>
             <div className="text-xl text-text-muted font-medium leading-relaxed text-left">
               <p className="mb-4 text-center">Most WordPress websites don’t perform — they just exist.</p>
               <p className="mb-4">Many websites look good but fail where it matters. They:</p>
@@ -90,13 +90,13 @@ export const WordPress = () => {
       </section>
 
       {/* 3. SOLUTION SECTION */}
-      <section className="section-spacing bg-white">
+      <section className="section-spacing bg-transparent">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
             <div>
-              <h2 className="mb-8 uppercase">THE SOLUTION</h2>
+              <h2 className="mb-8 uppercase text-white">THE SOLUTION</h2>
               <div className="text-lg text-text-muted font-medium leading-relaxed space-y-4">
-                <p className="font-bold text-text-main">A system built for performance, not just design</p>
+                <p className="font-bold text-white">A system built for performance, not just design</p>
                 <p>I build WordPress websites using a strategy-first approach, combining clean design, performance engineering, and conversion-focused structure.</p>
                 <p>Every project is crafted to:</p>
                 <ul className="list-disc pl-6 space-y-2">
@@ -114,10 +114,10 @@ export const WordPress = () => {
                 { title: 'Performance Optimization', desc: 'Clean code and advanced caching for sub-second load times.' },
                 { title: 'SEO-Friendly Framework', desc: 'Technical architecture built specifically for search engine visibility.' }
               ].map((item, idx) => (
-                <div key={idx} className="flex gap-6 p-6 border border-border-interface rounded-[6px] bg-surface group hover:border-brand transition-colors">
+                <div key={idx} className="flex gap-6 p-6 border border-white/10 rounded-[6px] bg-[#141414] group hover:border-brand transition-colors">
                   <div className="w-1.5 h-1.5 rounded-full bg-brand mt-2 group-hover:scale-150 transition-transform" />
                   <div>
-                    <h4 className="text-[14px] font-bold uppercase tracking-tight text-text-main mb-1">{item.title}</h4>
+                    <h4 className="text-[14px] font-bold uppercase tracking-tight text-white mb-1">{item.title}</h4>
                     <p className="text-sm text-text-muted font-medium">{item.desc}</p>
                   </div>
                 </div>
@@ -128,10 +128,10 @@ export const WordPress = () => {
       </section>
 
       {/* 4. WHAT YOU GET (FEATURES) */}
-      <section className="section-spacing bg-surface border-y border-border-interface">
+      <section className="section-spacing bg-[#111111]/60 border-y border-white/10">
         <div className="container-custom">
           <div className="text-center mb-20">
-            <h2 className="mb-6 uppercase">WHAT YOU GET</h2>
+            <h2 className="mb-6 uppercase text-white">WHAT YOU GET</h2>
             <p className="text-text-muted font-medium">Fully managed, custom-built digital assets.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -143,11 +143,11 @@ export const WordPress = () => {
               { title: 'SEO Optimized', desc: 'Technical foundations that search engines love.', icon: Search },
               { title: 'Full Control', desc: 'An easy-to-manage CMS that doesn’t require coding.', icon: Monitor }
             ].map((feature, idx) => (
-              <div key={idx} className="p-10 bg-white rounded-[6px] border border-border-interface shadow-premium-sm hover:shadow-premium-md transition-all group">
-                <div className="w-12 h-12 rounded-[3px] bg-surface flex items-center justify-center mb-8 border border-border-interface group-hover:bg-brand group-hover:text-white transition-colors">
+              <div key={idx} className="p-10 bg-[#141414] rounded-[6px] border border-white/10 shadow-premium-sm hover:shadow-premium-md hover:border-brand/40 transition-all group">
+                <div className="w-12 h-12 rounded-[3px] bg-[#1c1c1c] text-white flex items-center justify-center mb-8 border border-white/10 group-hover:bg-brand group-hover:text-white transition-colors">
                   <feature.icon size={24} strokeWidth={1.5} />
                 </div>
-                <h3 className="mb-4 uppercase text-lg">{feature.title}</h3>
+                <h3 className="mb-4 uppercase text-lg text-white">{feature.title}</h3>
                 <p className="text-sm text-text-muted font-medium leading-relaxed">
                   {feature.desc}
                 </p>
@@ -158,15 +158,15 @@ export const WordPress = () => {
       </section>
 
       {/* 5. BENEFITS / RESULTS */}
-      <section className="section-spacing bg-white">
+      <section className="section-spacing bg-transparent">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
              <div>
-              <h2 className="mb-8 uppercase">BUSINESS RESULTS</h2>
+              <h2 className="mb-8 uppercase text-white">BUSINESS RESULTS</h2>
               <div className="text-lg text-text-muted font-medium max-w-xl space-y-4">
-                <p className="font-bold text-text-main">Built to drive measurable growth</p>
+                <p className="font-bold text-white">Built to drive measurable growth</p>
                 <p>My work focuses on real business impact — not just visuals.</p>
-                <p className="font-bold text-text-main mt-8">Your website becomes a revenue-generating asset, not just an online presence.</p>
+                <p className="font-bold text-white mt-8">Your website becomes a revenue-generating asset, not just an online presence.</p>
               </div>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -176,7 +176,7 @@ export const WordPress = () => {
                 { title: 'Better Engagement', val: '2.5X' },
                 { title: 'Traffic & Visibility', val: 'Higher' }
               ].map((stat, idx) => (
-                <div key={idx} className="p-10 bg-surface border border-border-interface rounded-[6px] text-center">
+                <div key={idx} className="p-10 bg-[#141414] border border-white/10 rounded-[6px] text-center">
                   <span className="text-4xl font-display font-bold text-brand block mb-2">{stat.val}</span>
                   <span className="text-[10px] font-bold uppercase tracking-widest text-text-muted">{stat.title}</span>
                 </div>
@@ -190,15 +190,15 @@ export const WordPress = () => {
       <Process />
 
       {/* 7. CTA SECTION */}
-      <section className="section-spacing bg-white">
+      <section className="section-spacing bg-transparent">
         <div className="container-custom text-center">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="max-w-4xl mx-auto py-20 lg:py-32 px-10 bg-surface rounded-[6px] border border-border-interface"
+            className="max-w-4xl mx-auto py-20 lg:py-32 px-10 bg-[#141414] rounded-[6px] border border-white/10"
           >
-            <h2 className="mb-8 uppercase">
+            <h2 className="mb-8 uppercase text-white">
               LET’S BUILD A WEBSITE <br />
               <span className="text-brand">THAT PERFORMS.</span>
             </h2>
@@ -206,14 +206,14 @@ export const WordPress = () => {
               If your current website isn’t delivering results, it’s time to upgrade to a system that works as hard as you do.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild className="w-full sm:w-auto h-16 px-12 gap-2 text-[13px] font-bold uppercase tracking-widest">
-                <Link to="/contact" className="flex items-center gap-2">
+              <Button asChild className="w-full sm:w-auto">
+                <Link to="/contact">
                   <Calendar size={18} />
                   Book a call
                 </Link>
               </Button>
-              <Button variant="secondary" asChild className="w-full sm:w-auto h-16 px-12 gap-2 text-[13px] font-bold uppercase tracking-widest">
-                <Link to="/free-audit" className="flex items-center gap-2">
+              <Button variant="secondary" asChild className="w-full sm:w-auto">
+                <Link to="/free-audit">
                   <Search size={18} />
                   Free Website Audit
                 </Link>
